@@ -1,30 +1,84 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ![Project image](static/images/mainImage.png)
 
-## Template Instructions
+# Student Academic Performance Analysis
 
-Welcome,
+This project is part of the five milestone projects within the Full Stack Developer course offered by Code Institute. It is the final project in this course and represents my chosen path in Predictive Analytics. The initial concept for this project revolves around 'working with data'.
 
-This is the Code Institute student template for the bring your own data project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+In this project, you will be guided step by step through the entire process, from data cleaning to feature engineering. The content has been personalized to create a welcoming atmosphere, helping you gain a thorough understanding of each individual step, including what I did and how I accomplished it.
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+If you ever feel confused, please refer back to the README file, where you will find a wealth of important information relevant to the project.
 
-## How to use this repo
+The live application can be found [here].
 
-1. Use this template to create your GitHub project repo
+## Dataset Content
 
-1. In your newly created repo click on the green Code button. 
+The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/larsen0966/student-performance-data-set).
 
-1. Then, from the Codespaces tab, click Create codespace on main.
+**What is Kaggle?**
 
-1. Wait for the workspace to open. This can take a few minutes.
+- Kaggle is an online community platform for data scientists and machine learning enthusiasts.
+- Kaggle allows users to collaborate with other users, find and publish datasets, use GPU integrated notebooks, and compete with other data scientists to solve data science challenges.
 
-1. Open a new terminal and `pip3 install -r requirements.txt`
+In this project, I created a fictional user story. However, the predictive analytics conducted could be applied to a real project in the workplace.
 
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
+This document contains 649 rows (650 including the header) and represents student records from two Portuguese schools: Gabriel Pereira (GP) and Mousinho da Silveira (MS).
 
-1. Click the kernel button and choose Python Environments.
+This dataset contains student profiles, such as:
 
-Note that the kernel says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
+- demographic information;
+
+- family background;
+
+- study habits;
+
+- extracurricular activities;
+
+- access to resources;
+
+- previous grades.
+
+For each student, the dataset includes features describing their personal and academic background, as well as their final grade in Portuguese (G3), which will be used as the target variable for prediction.
+
+In any part of the project where you don’t understand one of the variables used in the analysis, please refer to the table below.
+Ordering starts from 0 to match the imported dataset.
+
+---
+
+|Variable|Meaning|Units/Categories|
+|:----|:----|:----|
+|0. school|Student's school|'GP' - Gabriel Pereira or 'MS' - Mousinho da Silveira|
+|1. sex|Student’s gender|F = Female, M = Male|
+|2. age|Age of the student|Integer (15–22 years)|
+|3. address|Home address type|U = Urban, R = Rural|
+|4. famsize|Family size|LE3 = ≤ 3 members, GT3 = > 3 members|
+|5. Pstatus|Parent’s cohabitation status|T = Together, A = Apart|
+|6. Medu|Mother’s education level|0 = None, 1 = Primary, 2 = 5–9th grade, 3 = Secondary, 4 = Higher|
+|7. Fedu|Father’s education level|Same as Medu|
+|8. Mjob|Mother’s occupation|teacher, health, services, at_home, other|
+|9. Fjob|Father’s occupation|teacher, health, services, at_home, other|
+|10. reason|Reason for choosing this school|home, reputation, course, other|
+|11. guardian|Student’s guardian|mother, father, other|
+|12. traveltime|Home-to-school travel time|1 = <15 min, 2 = 15–30 min, 3 = 30–60 min, 4 = >1 hour|
+|13. studytime|Weekly study time|1300 - 215245|
+|14. failures|Number of past class failures|Integer (0–4)|
+|15. schoolsup|Extra educational support|yes / no|
+|16. famsup|Family educational support|yes / no|
+|17. paid|Extra paid classes in subject|yes / no|
+|18. activities|Extra-curricular activities|yes / no|
+|19. nursery|Attended nursery school|yes / no|
+|20. higher|Plans for higher education|yes / no|
+|21. internet|Internet access at home|yes / no|
+|22. romantic|In a romantic relationship|yes / no|
+|23. famrel|Quality of family relationships|Scale: 1 (very bad) - 5 (excellent)|
+|24. freetime|Free time after school|Scale: 1 (very low) - 5 (very high)|
+|25. goout|Going out with friends|Scale: 1 (very low) - 5 (very high)|
+|26. Dalc|Workday alcohol consumption|Scale: 1 - (very low) - 5 (very high)|
+|27. Walc|Weekend alcohol consumption|Scale: 1 - (very low) - 5 (very high)|
+|28. health|Current health status|Scale: 1 (very bad) - 5 (very good)|
+|29. absences|Number of school absences|Integer (0–93 days)|
+|30. G1|First period grade|Integer (0–20)|
+|31. G2|Second period grade|Integer (0–20)|
+|32. G2|Final grade (Target variable)|Integer (0–20)|
 
 ## Cloud IDE Reminders
 
