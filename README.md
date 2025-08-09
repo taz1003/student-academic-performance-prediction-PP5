@@ -21,7 +21,9 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/larsen0966/
 
 In this project, I created a fictional user story. However, the predictive analytics conducted could be applied to a real project in the workplace.
 
-This document contains 649 rows (650 including the header) and represents student records from two Portuguese schools: Gabriel Pereira (GP) and Mousinho da Silveira (MS).
+### About the dataset
+
+This dataset contains 649 rows (650 including the header) and represents student records from two Portuguese schools: Gabriel Pereira (GP) and Mousinho da Silveira (MS). This data approaches the students' academic achievement in secondary education. The data attributes include student grades, demographic, social and school related features and it was collected by using school reports and questionnaires.
 
 This dataset contains student profiles, such as:
 
@@ -78,7 +80,7 @@ Ordering starts from 0 to match the imported dataset.
 |29. absences|Number of school absences|Integer (0–93 days)|
 |30. G1|First period grade|Integer (0–20)|
 |31. G2|Second period grade|Integer (0–20)|
-|32. G2|Final grade (Target variable)|Integer (0–20)|
+|32. G3|Final grade (Target variable)|Integer (0–20)|
 
 ## Cloud IDE Reminders
 
@@ -90,57 +92,155 @@ To log into the Heroku toolbelt CLI:
 4. In the terminal, run `heroku_config`
 5. Paste in your API key when asked
 
-
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
+## Agile methodology - Development
 
-## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data. 
+- In the beginning of the project I decided to create a Kanban project, where to input 'issues', the idea was to help me in following a
+direction while building this project.
+- The kanban board for this project can be found in this [url](https://github.com/users/taz1003/projects/4/views/1).
 
+## Crisp-DM, what is it and how is it used?
 
-## Business Requirements
-* Describe your business requirements
+CRISP-DM, which stands for CRoss Industry Standard Process for Data Mining, is a process model that serves as the foundation for data science projects.
 
+CRISP-DM consists of six sequential phases:
 
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+1. **Business Understanding** - What are the business requirements?
+2. **Data Understanding** - What data do we have or need? Is the data clean?
+   - Remember, "garbage in, garbage out," so it’s essential to ensure your data is properly cleaned.
+3. **Data Preparation** - How will we organize the data for modeling?
+4. **Modeling** - Which modeling techniques should we use?
+5. **Evaluation** - Which model best aligns with the business objectives?
+6. **Deployment** - How will stakeholders access the results?
 
+For a more in-depth understanding of each phase and how to implement them, please refer to [CRISP-DM](https://www.datascience-pm.com/crisp-dm-2/).
 
-## The rationale to map the business requirements to the Data Visualizations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+## Business Case Overview
 
+An academic advising team at a Portuguese high school is interested in identifying the most important factors influencing students' academic performance, with a focus on their final grade (G3). The goal is twofold:
+
+1. Understand how different background, lifestyle, and support-related attributes correlate with student outcomes.
+2. Predict final performance to better support at-risk students through early intervention.
+
+The client has access to a publicly available dataset containing student demographic data, family background, academic behavior, and personal circumstances. This data provides a unique opportunity to explore and model the key factors influencing final academic performance.
+
+## Rationale to map the business requirements to the Data Visualizations and ML tasks
+
+### Business Requirement 1 : **Understand which factors most influence students' academic performance.**
+
+- The client expects to explore correlations and patterns between variables such as parental education, study time, relationship status, internet access, family support, and other lifestyle indicators, with the final academic grade (G3) -
+  1. Visual analysis of the most influential features
+  2. Insights into how specific features affect student success
+
+### Business Requirement 2 : **Predict a student's final grade based on their profile and behavior.**
+
+- The client wants a predictive model that can estimate a student's final grade using the available features. This will help academic staff assess performance risks and guide targeted interventions -
+  1. Predictive system embedded into a dashboard
+  2. Real-time input widgets to test predictions based on hypothetical or real student profiles
+
+## Hypothesis
+
+### Hypothesis One
+
+We suspect that students who dedicate more weekly study time tend to achieve higher final grades.
+
+- A correlation study between 'studytime' and 'G3' can help investigate this relationship.
+
+### Hypothesis Two
+
+Parents maybe?
+
+- A Correlation study can help in this investigation.
+
+### Hypothesis Three
+
+Absence rate?
+
+- A Correlation study can help in this investigation.
+
+### Hypothesis Four
+
+Alchohol intake Dalc and Walc negatively impacting G3?
+
+- A Correlation study can help in this investigation.
+
+### Hypothesis Five
+
+Hopefully better family relationships :D
+
+- A Correlation study can help in this investigation.
 
 ## ML Business Case
-* In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 
+### Predict Final grade (G3)
 
 ## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
-
-
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
 
 ## Deployment
-### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+The master branch of this repository has been used for the deployed version of this application.
+
+### Using Github & VSCode
+
+To deploy my Data application, I used the [Code Institute milestone-project-bring-your-own-data Template](https://github.com/Code-Institute-Solutions/milestone-project-bring-your-own-data).
+
+- Click the 'Use This Template' button.
+- Add a repository name and brief description.
+- Click the 'Create Repository from Template' to create your repository.
+- To create a workspace you then need to click 'Code', then 'Create codespace on main', this can take a few minutes.
+- When you want to work on the project it is best to open the workspace from 'Codespaces' as this will open your previous workspace rather than creating a new one. You should pin the workspace so that it isn't deleted.
+- Committing your work should be done often and should have clear/explanatory messages, use the following commands to make your commits:
+  - `git add .`: adds all modified files to a staging area
+  - `git commit -m "A message explaining your commit"`: commits all changes to a local repository.
+  - `git push`: pushes all your committed changes to your Github repository.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository you will be able to make a copy of the original repository on your own GitHub account allowing you to view and/or make changes without affecting the original repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](repo here???)
+2. At the top of the Repository (not top of page) just above the "Settings" button on the menu, locate the "Fork" button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open commandline interface on your computer
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3. `$ git clone (paste url)`
+7. Press Enter. Your local clone will be created.
+
+### Deployment To Heroku
+
+- The App live link is: (paste url)
+- The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+5. The deployment process should happen smoothly in case all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
 
+---
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
 
+|Libraries Used In The Project|How I Used The Library|Link|
+|:----|:----|:----|
+|Numpy|Used to process arrays that store values and aka data|[URL](https://numpy.org/)|
+|Pandas|Used for data analysis, data exploration, data manipulation,and data visualization|[URL](https://pandas.pydata.org/)|
+|Matplotlib|Used for graphs and plots to visualize the data|[URL](https://matplotlib.org/)|
+|Seaborn|Used to visualize the data in the Streamlit app with graphs and plots|[URL](https://seaborn.pydata.org/)|
+|ML: feature-engine|Used for engineering the data for the pipeline|[URL](https://feature-engine.readthedocs.io/en/latest/)|
+|ML: Scikit-learn|Used to creat the pipeline and apply algorithms, and feature engineering steps|[URL](https://scikit-learn.org/stable/)|
+|Streamlit|Used for creating the app to visualize the project's study|[URL](https://streamlit.io/)|
+|Kaggle|Used to import the dataset required to perform the analysis|[URL](https://www.kaggle.com/)|
+|Grammarly|Used to improve, modify or add written communications throughout the project|[URL](https://app.grammarly.com/)|
 
 ## Credits 
 
